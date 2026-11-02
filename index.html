@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glow Cosmetics - Prodotti di Bellezza</title>
+    <style>
+        /* Stili di base */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+            color: #333;
+        }
+
+        /* Intestazione */
+        header {
+            background-color: #f4c2c2;
+            padding: 30px 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #fff;
+            font-size: 2.8em;
+            letter-spacing: 2px;
+        }
+
+        /* Navigazione */
+        nav {
+            background-color: #fff;
+            padding: 15px;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #555;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: #f4c2c2;
+        }
+
+        /* Contenuto Principale */
+        main {
+            padding: 40px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* Sezione Benvenuto */
+        .hero {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .hero h2 {
+            color: #c78b8b;
+            font-size: 2em;
+        }
+
+        .hero p {
+            font-size: 1.1em;
+            color: #666;
+            line-height: 1.6;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* Griglia Prodotti */
+        .sezione-prodotti h2 {
+            text-align: center;
+            color: #c78b8b;
+            margin-bottom: 30px;
+        }
+
+        .griglia-prodotti {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .card-prodotto {
+            background-color: #fff;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card-prodotto:hover {
+            transform: translateY(-5px);
+        }
+
+        .segnaposto-immagine {
+            width: 100%;
+            height: 200px;
+            background-color: #f0e6e6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a08a8a;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .card-prodotto h3 {
+            color: #333;
+            margin: 10px 0;
+        }
+
+        .descrizione {
+            color: #777;
+            font-size: 0.9em;
+            min-height: 40px;
+        }
+
+        .prezzo {
+            color: #c78b8b;
+            font-size: 1.4em;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        .btn-acquista {
+            display: block;
+            background-color: #f4c2c2;
+            color: white;
+            padding: 12px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .btn-acquista:hover {
+            background-color: #c78b8b;
+        }
+
+        /* Piè di pagina */
+        footer {
+            background-color: #333;
+            color: #ccc;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+        }
+
+        footer p {
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>GLOW COSMETICS</h1>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#prodotti">Shop</a>
+        <a href="#chi-siamo">Chi Siamo</a>
+        <a href="#contatti">Contatti</a>
+    </nav>
+
+    <main>
+        <section class="hero" id="chi-siamo">
+            <h2>La tua bellezza, 100% naturale.</h2>
+            <p>Scopri la nostra linea esclusiva di prodotti cosmetici per la cura del corpo e del viso. Formule innovative, ingredienti bio e zero test sugli animali per un'azienda attenta alla salute e all'ambiente.</p>
+        </section>
+
+        <section class="sezione-prodotti" id="prodotti">
+            <h2>I Nostri Bestseller</h2>
+            
+            <div class="griglia-prodotti">
+                
+                <article class="card-prodotto">
+                    <div class="segnaposto-immagine">[ Immagine Crema Viso ]</div>
+                    <h3>Crema Viso Idratante</h3>
+                    <p class="descrizione">Trattamento da giorno con acido ialuronico e vitamina E.</p>
+                    <div class="prezzo">€ 24,90</div>
+                    <a href="#" class="btn-acquista">Aggiungi al Carrello</a>
+                </article>
+
+                <article class="card-prodotto">
+                    <div class="segnaposto-immagine">[ Immagine Siero ]</div>
+                    <h3>Siero Antietà Notte</h3>
+                    <p class="descrizione">Siero intensivo per una pelle liscia, riposata e luminosa.</p>
+                    <div class="prezzo">€ 35,00</div>
+                    <a href="#" class="btn-acquista">Aggiungi al Carrello</a>
+                </article>
+
+                <article class="card-prodotto">
+                    <div class="segnaposto-immagine">[ Immagine Maschera ]</div>
+                    <h3>Maschera Argilla Rosa</h3>
+                    <p class="descrizione">Azione purificante e lenitiva per pelli sensibili e delicate.</p>
+                    <div class="prezzo">€ 18,50</div>
+                    <a href="#" class="btn-acquista">Aggiungi al Carrello</a>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer id="contatti">
+        <p>&copy; 2026 Glow Cosmetics S.p.A. - Tutti i diritti riservati.</p>
+        <p>Via dell'Estetica, 12 - 59100 Prato (PO) | P.IVA 01234567890</p>
+        <p>Email: info@glowcosmetics.it | Assistenza Clienti: 800-123456</p>
+    </footer>
+
+</body>
+</html>
