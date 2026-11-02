@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glow Cosmetics - Prodotti di Bellezza</title>
+    <title>Glow Cosmetics - Prodotti di Bellezza e Carrello</title>
     <style>
         /* Stili di base */
         body {
@@ -34,6 +34,9 @@
             padding: 15px;
             text-align: center;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
         nav a {
@@ -46,6 +49,11 @@
 
         nav a:hover {
             color: #f4c2c2;
+        }
+
+        .icona-carrello {
+            color: #c78b8b;
+            font-size: 1.1em;
         }
 
         /* Contenuto Principale */
@@ -103,17 +111,11 @@
             transform: translateY(-5px);
         }
 
-        .segnaposto-immagine {
+        .img-prodotto {
             width: 100%;
-            height: 200px;
-            background-color: #f0e6e6;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #a08a8a;
+            height: auto;
             border-radius: 4px;
-            margin-bottom: 20px;
-            font-style: italic;
+            margin-bottom: 15px;
         }
 
         .card-prodotto h3 {
@@ -149,6 +151,66 @@
             background-color: #c78b8b;
         }
 
+        /* Sezione Carrello */
+        .sezione-carrello {
+            margin-top: 60px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+
+        .sezione-carrello h2 {
+            color: #c78b8b;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table th, table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        table th {
+            background-color: #fafafa;
+            color: #555;
+        }
+
+        .totale-carrello {
+            font-weight: bold;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .btn-checkout {
+            display: inline-block;
+            background-color: #333;
+            color: #fff;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            float: right;
+        }
+
+        .btn-checkout:hover {
+            background-color: #555;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
         /* Piè di pagina */
         footer {
             background-color: #333;
@@ -175,6 +237,7 @@
         <a href="#prodotti">Shop</a>
         <a href="#chi-siamo">Chi Siamo</a>
         <a href="#contatti">Contatti</a>
+        <a href="#carrello" class="icona-carrello">🛒 Carrello (1)</a>
     </nav>
 
     <main>
@@ -189,30 +252,59 @@
             <div class="griglia-prodotti">
                 
                 <article class="card-prodotto">
-                    <div class="segnaposto-immagine">[ Immagine Crema Viso ]</div>
+                    <!-- Utilizzo di un'immagine segnaposto chiaramente identificabile -->
+                    <img src="https://dummyimage.com/300x200/f4c2c2/ffffff.png&text=Crema+Viso" alt="Crema Viso Idratante" class="img-prodotto">
                     <h3>Crema Viso Idratante</h3>
                     <p class="descrizione">Trattamento da giorno con acido ialuronico e vitamina E.</p>
                     <div class="prezzo">€ 24,90</div>
-                    <a href="#" class="btn-acquista">Aggiungi al Carrello</a>
+                    <a href="#carrello" class="btn-acquista">Aggiungi al Carrello</a>
                 </article>
 
                 <article class="card-prodotto">
-                    <div class="segnaposto-immagine">[ Immagine Siero ]</div>
+                    <img src="https://dummyimage.com/300x200/f4c2c2/ffffff.png&text=Siero+Notte" alt="Siero Antietà Notte" class="img-prodotto">
                     <h3>Siero Antietà Notte</h3>
                     <p class="descrizione">Siero intensivo per una pelle liscia, riposata e luminosa.</p>
                     <div class="prezzo">€ 35,00</div>
-                    <a href="#" class="btn-acquista">Aggiungi al Carrello</a>
+                    <a href="#carrello" class="btn-acquista">Aggiungi al Carrello</a>
                 </article>
 
                 <article class="card-prodotto">
-                    <div class="segnaposto-immagine">[ Immagine Maschera ]</div>
+                    <img src="https://dummyimage.com/300x200/f4c2c2/ffffff.png&text=Maschera+Argilla" alt="Maschera Argilla Rosa" class="img-prodotto">
                     <h3>Maschera Argilla Rosa</h3>
                     <p class="descrizione">Azione purificante e lenitiva per pelli sensibili e delicate.</p>
                     <div class="prezzo">€ 18,50</div>
-                    <a href="#" class="btn-acquista">Aggiungi al Carrello</a>
+                    <a href="#carrello" class="btn-acquista">Aggiungi al Carrello</a>
                 </article>
 
             </div>
+        </section>
+
+        <section class="sezione-carrello clearfix" id="carrello">
+            <h2>Il tuo Carrello</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Prodotto</th>
+                        <th>Quantità</th>
+                        <th>Prezzo Unitario</th>
+                        <th>Totale Riga</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Crema Viso Idratante</td>
+                        <td>1</td>
+                        <td>€ 24,90</td>
+                        <td>€ 24,90</td>
+                    </tr>
+                    <!-- Esempio di riga vuota o altri prodotti potrebbero andare qui -->
+                    <tr class="totale-carrello">
+                        <td colspan="3" style="text-align: right;">Totale Complessivo:</td>
+                        <td>€ 24,90</td>
+                    </tr>
+                </tbody>
+            </table>
+            <a href="#" class="btn-checkout">Procedi al Pagamento</a>
         </section>
     </main>
 
