@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina Bio-Cosmetics - Contatti</title>
+    <style>
+        /* Stili Generali */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #FAF8F6;
+            color: #2E352F;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #F4E1E0;
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom: 3px solid #7A9A82;
+        }
+
+        header h1 {
+            color: #4A6350;
+            font-size: 2.2em;
+            letter-spacing: 1px;
+        }
+
+        header p {
+            font-style: italic;
+            color: #5C6B5E;
+            margin-top: 5px;
+        }
+
+        nav {
+            background-color: #7A9A82;
+            padding: 12px 0;
+            text-align: center;
+        }
+
+        nav a {
+            color: #FFFFFF;
+            text-decoration: none;
+            margin: 0 18px;
+            font-weight: bold;
+            font-size: 1.05em;
+            padding: 6px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover, nav a.attivo {
+            background-color: #4A6350;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .colonna-info {
+            flex: 1 1 320px;
+            background-color: #FFFFFF;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #E2D2D1;
+        }
+
+        .colonna-form {
+            flex: 2 1 450px;
+            background-color: #FFFFFF;
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #E2D2D1;
+        }
+
+        h2 {
+            color: #4A6350;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #D9B3B0;
+            padding-bottom: 6px;
+        }
+
+        .dato-contatto {
+            margin-bottom: 15px;
+        }
+
+        /* Stili Modulo */
+        .gruppo-form {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #4A6350;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #C8B8B7;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 1em;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #7A9A82;
+        }
+
+        button {
+            background-color: #7A9A82;
+            color: #FFFFFF;
+            border: none;
+            padding: 12px 25px;
+            font-size: 1em;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #4A6350;
+        }
+
+        footer {
+            background-color: #4A6350;
+            color: #FFFFFF;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Lumina Bio-Cosmetics</h1>
+        <p>"La tua bellezza naturale, in perfetta armonia con il pianeta."</p>
+    </header>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="prodotti.html">Catalogo Prodotti</a>
+        <a href="chi-siamo.html">Chi Siamo</a>
+        <a href="contatti.html" class="attivo">Contatti</a>
+    </nav>
+
+    <main>
+        <section class="colonna-info">
+            <h2>Assistenza Clienti</h2>
+            <p class="dato-contatto">
+                Hai domande sui nostri ingredienti INCI o desideri consigli sulla tua beauty routine? 
+                Il nostro team è a tua disposizione.
+            </p>
+            <div class="dato-contatto">
+                <strong>Sede Operativa:</strong><br>
+                Via dei Giardini Botanici, 14 - Milano (MI)
+            </div>
+            <div class="dato-contatto">
+                <strong>Email Servizio Clienti:</strong><br>
+                info@luminabiocosmetics.it
+            </div>
+            <div class="dato-contatto">
+                <strong>Telefono:</strong><br>
+                +39 02 98765432
+            </div>
+            <div class="dato-contatto">
+                <strong>Orari Assistenza:</strong><br>
+                Lunedì - Venerdì: 09:00 - 18:00
+            </div>
+        </section>
+
+        <section class="colonna-form">
+            <h2>Scrivici un Messaggio</h2>
+            <form action="#" method="post">
+                <div class="gruppo-form">
+                    <label for="nome">Nome e Cognome *</label>
+                    <input type="text" id="nome" name="nome" placeholder="Inserisci il tuo nome completo" required>
+                </div>
+
+                <div class="gruppo-form">
+                    <label for="email">Indirizzo Email *</label>
+                    <input type="email" id="email" name="email" placeholder="esempio@email.it" required>
+                </div>
+
+                <div class="gruppo-form">
+                    <label for="argomento">Argomento della richiesta</label>
+                    <select id="argomento" name="argomento">
+                        <option value="info-prodotti">Informazioni sui prodotti e INCI</option>
+                        <option value="ordini">Stato ordine e spedizioni</option>
+                        <option value="boutique">Punti vendita e boutique</option>
+                        <option value="altro">Altra richiesta</option>
+                    </select>
+                </div>
+
+                <div class="gruppo-form">
+                    <label for="messaggio">Messaggio *</label>
+                    <textarea id="messaggio" name="messaggio" rows="5" placeholder="Scrivi qui la tua richiesta..." required></textarea>
+                </div>
+
+                <button type="submit">Invia Richiesta</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Lumina Bio-Cosmetics S.r.l. - Tutti i diritti riservati | P.IVA 01234567890</p>
+    </footer>
+
+</body>
+</html>
