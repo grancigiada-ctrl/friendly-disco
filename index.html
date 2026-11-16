@@ -3,226 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glow Cosmetics - Prodotti di Bellezza e Carrello</title>
+    <title>Lumina Bio-Cosmetics - Home</title>
     <style>
-        /* Stili di base */
-        body {
-            font-family: Arial, sans-serif;
+        /* Stili Generali */
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            background-color: #fafafa;
-            color: #333;
         }
 
-        /* Intestazione */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #FAF8F6;
+            color: #2E352F;
+            line-height: 1.6;
+        }
+
+        /* Intestazione e Menu */
         header {
-            background-color: #f4c2c2;
-            padding: 30px 20px;
+            background-color: #F4E1E0;
+            padding: 25px 20px;
             text-align: center;
+            border-bottom: 3px solid #7A9A82;
         }
 
         header h1 {
-            margin: 0;
-            color: #fff;
-            font-size: 2.8em;
-            letter-spacing: 2px;
+            color: #4A6350;
+            font-size: 2.2em;
+            letter-spacing: 1px;
         }
 
-        /* Navigazione */
+        header p {
+            font-style: italic;
+            color: #5C6B5E;
+            margin-top: 5px;
+        }
+
         nav {
-            background-color: #fff;
-            padding: 15px;
+            background-color: #7A9A82;
+            padding: 12px 0;
             text-align: center;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
         }
 
         nav a {
-            margin: 0 15px;
+            color: #FFFFFF;
             text-decoration: none;
-            color: #555;
+            margin: 0 18px;
             font-weight: bold;
-            text-transform: uppercase;
+            font-size: 1.05em;
+            padding: 6px 12px;
+            border-radius: 4px;
+            transition: background-color 0.3s;
         }
 
-        nav a:hover {
-            color: #f4c2c2;
-        }
-
-        .icona-carrello {
-            color: #c78b8b;
-            font-size: 1.1em;
+        nav a:hover, nav a.attivo {
+            background-color: #4A6350;
         }
 
         /* Contenuto Principale */
         main {
-            padding: 40px 20px;
-            max-width: 1100px;
-            margin: 0 auto;
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
         }
 
-        /* Sezione Benvenuto */
         .hero {
+            background-color: #FFFFFF;
+            padding: 40px 30px;
+            border-radius: 10px;
             text-align: center;
-            margin-bottom: 50px;
-        }
-
-        .hero h2 {
-            color: #c78b8b;
-            font-size: 2em;
-        }
-
-        .hero p {
-            font-size: 1.1em;
-            color: #666;
-            line-height: 1.6;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Griglia Prodotti */
-        .sezione-prodotti h2 {
-            text-align: center;
-            color: #c78b8b;
+            border: 1px solid #E2D2D1;
             margin-bottom: 30px;
         }
 
-        .griglia-prodotti {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-            justify-content: center;
-        }
-
-        .card-prodotto {
-            background-color: #fff;
-            border: 1px solid #eee;
-            border-radius: 8px;
-            width: 300px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-            transition: transform 0.3s;
-        }
-
-        .card-prodotto:hover {
-            transform: translateY(-5px);
-        }
-
-        .img-prodotto {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 4px;
+        .hero h2 {
+            color: #4A6350;
+            font-size: 1.8em;
             margin-bottom: 15px;
         }
 
-        .card-prodotto h3 {
-            color: #333;
-            margin: 10px 0;
+        .hero p {
+            max-width: 750px;
+            margin: 0 auto 25px auto;
+            font-size: 1.1em;
         }
 
-        .descrizione {
-            color: #777;
-            font-size: 0.9em;
-            min-height: 40px;
-        }
-
-        .prezzo {
-            color: #c78b8b;
-            font-size: 1.4em;
-            font-weight: bold;
-            margin: 15px 0;
-        }
-
-        .btn-acquista {
-            display: block;
-            background-color: #f4c2c2;
-            color: white;
-            padding: 12px;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-
-        .btn-acquista:hover {
-            background-color: #c78b8b;
-        }
-
-        /* Sezione Carrello */
-        .sezione-carrello {
-            margin-top: 60px;
-            background-color: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-        }
-
-        .sezione-carrello h2 {
-            color: #c78b8b;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-
-        table th, table td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-        }
-
-        table th {
-            background-color: #fafafa;
-            color: #555;
-        }
-
-        .totale-carrello {
-            font-weight: bold;
-            font-size: 1.2em;
-            color: #333;
-        }
-
-        .btn-checkout {
+        .bottone {
             display: inline-block;
-            background-color: #333;
-            color: #fff;
-            padding: 15px 30px;
+            background-color: #7A9A82;
+            color: #FFFFFF;
+            padding: 12px 25px;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 5px;
             font-weight: bold;
-            text-transform: uppercase;
-            float: right;
         }
 
-        .btn-checkout:hover {
-            background-color: #555;
+        .bottone:hover {
+            background-color: #4A6350;
         }
 
-        .clearfix::after {
-            content: "";
-            clear: both;
-            display: table;
+        /* Punti di forza */
+        .griglia-valori {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .scheda-valore {
+            background-color: #FFFFFF;
+            flex: 1 1 280px;
+            padding: 25px;
+            border-radius: 8px;
+            border-top: 4px solid #D9B3B0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .scheda-valore h3 {
+            color: #4A6350;
+            margin-bottom: 10px;
         }
 
         /* Piè di pagina */
         footer {
-            background-color: #333;
-            color: #ccc;
+            background-color: #4A6350;
+            color: #FFFFFF;
             text-align: center;
-            padding: 30px 20px;
+            padding: 20px;
             margin-top: 50px;
-        }
-
-        footer p {
-            margin: 5px 0;
             font-size: 0.9em;
         }
     </style>
@@ -230,87 +138,48 @@
 <body>
 
     <header>
-        <h1>GLOW COSMETICS</h1>
+        <h1>Lumina Bio-Cosmetics</h1>
+        <p>"La tua bellezza naturale, in perfetta armonia con il pianeta."</p>
     </header>
 
     <nav>
-        <a href="#">Home</a>
-        <a href="#prodotti">Shop</a>
-        <a href="#chi-siamo">Chi Siamo</a>
-        <a href="#contatti">Contatti</a>
-        <a href="#carrello" class="icona-carrello">🛒 Carrello (1)</a>
+        <a href="index.html" class="attivo">Home</a>
+        <a href="prodotti.html">Catalogo Prodotti</a>
+        <a href="chi-siamo.html">Chi Siamo</a>
+        <a href="contatti.html">Contatti</a>
     </nav>
 
     <main>
-        <section class="hero" id="chi-siamo">
-            <h2>La tua bellezza, 100% naturale.</h2>
-            <p>Scopri la nostra linea esclusiva di prodotti cosmetici per la cura del corpo e del viso. Formule innovative, ingredienti bio e zero test sugli animali per un'azienda attenta alla salute e all'ambiente.</p>
+        <section class="hero">
+            <h2>Skincare Biologica ed Eco-Sostenibile</h2>
+            <p>
+                Benvenuti in Lumina Bio-Cosmetics. Realizziamo trattamenti per la cura della pelle 
+                con ingredienti biologici a km zero, privi di sostanze chimiche aggressive, 
+                pensati per chi desidera efficacia e rispetto per l'ambiente.
+            </p>
+            <a href="prodotti.html" class="bottone">Scopri i nostri prodotti</a>
         </section>
 
-        <section class="sezione-prodotti" id="prodotti">
-            <h2>I Nostri Bestseller</h2>
-            
-            <div class="griglia-prodotti">
-                
-                <article class="card-prodotto">
-                    <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=300&h=200&fit=crop" alt="Crema Viso Idratante" class="img-prodotto">
-                    <h3>Crema Viso Idratante</h3>
-                    <p class="descrizione">Trattamento da giorno con acido ialuronico e vitamina E.</p>
-                    <div class="prezzo">€ 24,90</div>
-                    <a href="#carrello" class="btn-acquista">Aggiungi al Carrello</a>
-                </article>
+        <section class="griglia-valori">
+            <article class="scheda-valore">
+                <h3>100% Vegano &amp; Cruelty-Free</h3>
+                <p>Le nostre formule rispettano ogni forma di vita, utilizzando esclusivamente estratti vegetali certificati e mai testati sugli animali.</p>
+            </article>
 
-                <article class="card-prodotto">
-                    <img src="https://images.unsplash.com/photo-1608248593842-8021c6a81ce3?w=300&h=200&fit=crop" alt="Siero Antietà Notte" class="img-prodotto">
-                    <h3>Siero Antietà Notte</h3>
-                    <p class="descrizione">Siero intensivo per una pelle liscia, riposata e luminosa.</p>
-                    <div class="prezzo">€ 35,00</div>
-                    <a href="#carrello" class="btn-acquista">Aggiungi al Carrello</a>
-                </article>
+            <article class="scheda-valore">
+                <h3>Packaging Plastic-Free</h3>
+                <p>Tutte le nostre confezioni sono realizzate in vetro e alluminio riciclabile al 100%, per ridurre a zero l'impatto della plastica.</p>
+            </article>
 
-                <article class="card-prodotto">
-                    <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&h=200&fit=crop" alt="Maschera Argilla Rosa" class="img-prodotto">
-                    <h3>Maschera Argilla Rosa</h3>
-                    <p class="descrizione">Azione purificante e lenitiva per pelli sensibili e delicate.</p>
-                    <div class="prezzo">€ 18,50</div>
-                    <a href="#carrello" class="btn-acquista">Aggiungi al Carrello</a>
-                </article>
-
-            </div>
-        </section>
-
-        <section class="sezione-carrello clearfix" id="carrello">
-            <h2>Il tuo Carrello</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Prodotto</th>
-                        <th>Quantità</th>
-                        <th>Prezzo Unitario</th>
-                        <th>Totale Riga</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Crema Viso Idratante</td>
-                        <td>1</td>
-                        <td>€ 24,90</td>
-                        <td>€ 24,90</td>
-                    </tr>
-                    <tr class="totale-carrello">
-                        <td colspan="3" style="text-align: right;">Totale Complessivo:</td>
-                        <td>€ 24,90</td>
-                    </tr>
-                </tbody>
-            </table>
-            <a href="#" class="btn-checkout">Procedi al Pagamento</a>
+            <article class="scheda-valore">
+                <h3>Trasparenza INCI</h3>
+                <p>Garantiamo la massima chiarezza sull'origine e sulla filiera di ogni singolo ingrediente contenuto nei nostri cosmetici.</p>
+            </article>
         </section>
     </main>
 
-    <footer id="contatti">
-        <p>&copy; 2026 Glow Cosmetics S.p.A. - Tutti i diritti riservati.</p>
-        <p>Via dell'Estetica, 12 - 59100 Prato (PO) | P.IVA 01234567890</p>
-        <p>Email: info@glowcosmetics.it | Assistenza Clienti: 800-123456</p>
+    <footer>
+        <p>&copy; 2026 Lumina Bio-Cosmetics S.r.l. - Tutti i diritti riservati | P.IVA 01234567890</p>
     </footer>
 
 </body>
